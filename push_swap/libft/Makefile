@@ -6,7 +6,7 @@
 #    By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/10 17:11:58 by rbouizer          #+#    #+#              #
-#    Updated: 2023/12/24 14:28:33 by rbouizer         ###   ########.fr        #
+#    Updated: 2024/06/21 13:43:09 by rbouizer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRCS = ft_atoi.c \
 	   ft_strdup.c \
 	   ft_strjoin.c \
 	   ft_strlen.c \
-	   ft_strncmp.c \
+	   ft_strcmp.c \
 	   ft_strnstr.c \
 	   ft_strrchr.c \
 	   ft_strtrim.c \

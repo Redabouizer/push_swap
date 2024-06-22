@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 20:06:55 by rbouizer          #+#    #+#             */
-/*   Updated: 2024/06/22 16:56:56 by rbouizer         ###   ########.fr       */
+/*   Created: 2023/11/12 02:21:09 by rbouizer          #+#    #+#             */
+/*   Updated: 2024/06/21 13:41:34 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "libft.h"
 
-t_stack	*ft_lstmap(t_stack *lst, void *(*f)(void *), void (*del)(void *))
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	t_stack	*tmp;
-	t_stack	*new ;
+	size_t	i;
 
-	new = 0;
-	while (lst)
+	i = 0 ;
+	while ((s1[i] || s2[i]))
 	{
-		tmp = ft_lstnew(f(lst->content));
-		if (!tmp)
-		{
-			ft_lstclear(&new, del);
-			return (0);
-		}
-		ft_lstadd_back(&new, tmp);
-		lst = lst->next;
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
 	}
-	return (new);
+	return (0);
 }

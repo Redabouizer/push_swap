@@ -6,7 +6,7 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 09:22:27 by rbouizer          #+#    #+#             */
-/*   Updated: 2023/12/25 06:10:55 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/21 15:54:23 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,17 +77,3 @@ char	**ft_split(char const *s, char c)
 	str = set_mem(str, s, c);
 	return (str);
 }
-// int main ()
-// {
-// 	char *str = "str1;str2;str";
-// 	char c = ';';
-
-// 	char **s =ft_split(str,c);
-// 	int i = 0;
-// 	while (i<3)
-// 	{
-// 		printf("%s\n",s[i]);
-// 		i++;
-// 	}
-	
-// }

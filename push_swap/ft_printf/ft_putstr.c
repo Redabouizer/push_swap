@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 20:06:55 by rbouizer          #+#    #+#             */
-/*   Updated: 2024/06/22 16:56:56 by rbouizer         ###   ########.fr       */
+/*   Created: 2024/01/06 17:37:43 by rbouizer          #+#    #+#             */
+/*   Updated: 2024/01/07 16:46:20 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "ft_printf.h"
 
-t_stack	*ft_lstmap(t_stack *lst, void *(*f)(void *), void (*del)(void *))
+int	ft_putstr(char *str)
 {
-	t_stack	*tmp;
-	t_stack	*new ;
+	int	i;
 
-	new = 0;
-	while (lst)
+	i = 0;
+	if (!str)
+		return (ft_putstr("(null)"));
+	while (str[i] != '\0')
 	{
-		tmp = ft_lstnew(f(lst->content));
-		if (!tmp)
-		{
-			ft_lstclear(&new, del);
-			return (0);
-		}
-		ft_lstadd_back(&new, tmp);
-		lst = lst->next;
+		ft_putchar(str[i]);
+		i++;
 	}
-	return (new);
+	return (i);
 }

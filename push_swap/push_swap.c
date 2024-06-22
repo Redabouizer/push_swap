@@ -1,53 +1,63 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "libft/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/21 19:25:46 by rbouizer          #+#    #+#             */
+/*   Updated: 2024/06/22 16:59:38 by rbouizer         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main(int argc, char *argv[]) {
-    if (argc < 2)
-        return (0);
+#include "push_swap.h"
 
+// void  f()
+// {
+//     system("leaks push_swap");
+// }
+
+
+int main(int argc, char *argv[])
+{
+    // atexit(f);
+    t_stack *Stack_A = NULL;
     int i = 1;
-    char **list = malloc(sizeof(char *) * argc);
-    if (!list) {
-        fprintf(stderr, "Memory allocation failed\n");
-        return 1;
-    }
-    int list_index = 0;
 
-    while (i < argc) {
-        char **tokens = ft_split(argv[i], ' ');
-
-        if (tokens) {
-            int j = 0;
-            while (tokens[j] != NULL) {
-                int id = 0;
-                int error = 0;
-                while (tokens[j][id] != '\0') {
-                    if ((tokens[j][id] < '0' || tokens[j][id] > '9') && tokens[j][id] != '-') {
-                        error = 1;
-                    }
-                    id++;
-                }
-                if (!error) {
-                    list[list_index++] = tokens[j];
-                } else {
-                    printf("ERREUR\n");
-                    free(tokens);
-                    free(list);
-                    return 0;
-                }
-                j++;
+    if (argc > 1)
+    {
+        while (i < argc)
+        {
+            if (filter_number(argv[i]) != 0)
+            {
+                ft_printf("ERREUR\n");
+                return 1;
             }
-            free(tokens);
+            if (process_tokens(&Stack_A, argv[i]) != 0)
+                return 1;
+            i++;
         }
 
-        i++;
+        if (rep_number(Stack_A))
+        {
+            ft_lstclear(&Stack_A, free);
+            return 1;
+        }
+
+        ft_printf("list\n");
+        t_stack *current = Stack_A;
+        while (current != NULL)
+        {
+            ft_printf("%s\n", (char *)current->content);
+            current = current->next;
+        }
+
+        ft_lstclear(&Stack_A, free);
     }
-    printf("Tokens stored in list:\n");
-    for (int k = 0; k < list_index; k++) {
-        printf("%s\n", list[k]);
-    }
-    free(list);
 
     return 0;
 }
+
+
+
+

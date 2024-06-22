@@ -6,13 +6,13 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 20:00:48 by rbouizer          #+#    #+#             */
-/*   Updated: 2023/12/16 22:50:52 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/22 16:56:49 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./push_swap.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_stack *lst, void (*del)(void *))
 {
 	if (lst && del)
 	{

@@ -6,13 +6,13 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 19:52:14 by rbouizer          #+#    #+#             */
-/*   Updated: 2023/12/16 22:53:11 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/22 16:57:39 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_stack *lst)
 {
 	int	count;
 

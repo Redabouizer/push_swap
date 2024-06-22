@@ -6,13 +6,13 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 21:42:59 by rbouizer          #+#    #+#             */
-/*   Updated: 2023/12/23 20:20:46 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/22 02:08:35 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+size_t	ft_atoi(const char *str)
 {
 	int		s;
 	size_t	r;
@@ -38,5 +38,5 @@ int	ft_atoi(const char *str)
 			return (0);
 		i++;
 	}
-	return ((int)(s * r));
+	return ((s * r));
 }

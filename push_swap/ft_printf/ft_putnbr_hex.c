@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 20:06:55 by rbouizer          #+#    #+#             */
-/*   Updated: 2024/06/22 16:56:56 by rbouizer         ###   ########.fr       */
+/*   Created: 2024/01/06 17:37:38 by rbouizer          #+#    #+#             */
+/*   Updated: 2024/01/07 16:46:17 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "ft_printf.h"
 
-t_stack	*ft_lstmap(t_stack *lst, void *(*f)(void *), void (*del)(void *))
+int	ft_putnbr_hex(long nb, char x, int len)
 {
-	t_stack	*tmp;
-	t_stack	*new ;
+	int		cout;
+	char	*base;
 
-	new = 0;
-	while (lst)
+	if (x == 'x')
+		base = "0123456789abcdef";
+	else if (x == 'X')
+		base = "0123456789ABCDEF";
+	cout = 0;
+	if (nb < 0)
 	{
-		tmp = ft_lstnew(f(lst->content));
-		if (!tmp)
-		{
-			ft_lstclear(&new, del);
-			return (0);
-		}
-		ft_lstadd_back(&new, tmp);
-		lst = lst->next;
+		cout += ft_putchar('-');
+		nb = -nb;
 	}
-	return (new);
+	if (nb >= len)
+	{
+		cout += ft_putnbr_hex(nb / len, x, len);
+		cout += ft_putnbr_hex(nb % len, x, len);
+	}
+	else
+		cout += ft_putchar(base[nb]);
+	return (cout);
 }

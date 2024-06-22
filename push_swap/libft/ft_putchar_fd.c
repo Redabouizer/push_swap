@@ -6,7 +6,7 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 17:30:35 by rbouizer          #+#    #+#             */
-/*   Updated: 2023/12/25 04:53:05 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/21 15:59:12 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,4 @@ void	ft_putchar_fd(char c, int fd)
 {
 	if (fd >= 0)
 		write(fd, &c, 1);
-}
-int main()
-{
-	int c = 1 + '0';	
-	write(1, &c, 4);
 }
