@@ -6,7 +6,7 @@
 #    By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/06 17:37:50 by rbouizer          #+#    #+#              #
-#    Updated: 2024/06/23 16:02:37 by rbouizer         ###   ########.fr        #
+#    Updated: 2024/06/23 19:36:24 by rbouizer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ $(LIB) : $(OBJS)
 	$(AR) $(LIB) $(OBJS)
 
 $(NAME) : $(LIB)
-	$(CC) $(CFLAGS) -o $(NAME) push_swap.c $(LIB) ft_printf/libftprintf.a
+	$(CC) $(CFLAGS) -o $(NAME) ft_sort.c $(LIB) ft_printf/libftprintf.a
 
 %.o : %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@

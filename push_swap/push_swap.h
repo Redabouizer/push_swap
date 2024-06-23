@@ -6,7 +6,7 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 16:46:52 by rbouizer          #+#    #+#             */
-/*   Updated: 2024/06/23 15:04:15 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/23 18:59:42 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_stack {
 } t_stack;
 
 t_stack *ft_lstnew(int index, int content);
-void	ft_lstadd_front(t_stack **lst, t_stack *new);
 int		ft_lstsize(t_stack *lst);
 t_stack	*ft_lstlast(t_stack *lst);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
