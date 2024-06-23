@@ -6,11 +6,9 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 19:16:00 by rbouizer          #+#    #+#             */
-/*   Updated: 2024/06/22 16:43:36 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/23 14:55:26 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "push_swap.h"
 
 #include "push_swap.h"
 
@@ -19,7 +17,7 @@ void ft_swap(t_stack **stack, char c)
     if (*stack == NULL || (*stack)->next == NULL)
         return;
     
-    void *temp_content = (*stack)->content;
+    int temp_content = (*stack)->content;
     (*stack)->content = (*stack)->next->content;
     (*stack)->next->content = temp_content;
 

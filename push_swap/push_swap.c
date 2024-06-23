@@ -6,7 +6,7 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 19:25:46 by rbouizer          #+#    #+#             */
-/*   Updated: 2024/06/22 16:59:38 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/22 22:40:04 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 // {
 //     system("leaks push_swap");
 // }
-
 
 int main(int argc, char *argv[])
 {
@@ -28,36 +27,22 @@ int main(int argc, char *argv[])
     {
         while (i < argc)
         {
-            if (filter_number(argv[i]) != 0)
-            {
-                ft_printf("ERREUR\n");
-                return 1;
-            }
             if (process_tokens(&Stack_A, argv[i]) != 0)
                 return 1;
             i++;
         }
 
         if (rep_number(Stack_A))
-        {
-            ft_lstclear(&Stack_A, free);
             return 1;
-        }
 
         ft_printf("list\n");
         t_stack *current = Stack_A;
         while (current != NULL)
         {
-            ft_printf("%s\n", (char *)current->content);
+            ft_printf("%d\n", current->content);
             current = current->next;
         }
-
-        ft_lstclear(&Stack_A, free);
     }
 
     return 0;
 }
-
-
-
-
