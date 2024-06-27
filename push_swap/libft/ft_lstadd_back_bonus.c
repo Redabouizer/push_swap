@@ -6,16 +6,16 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 19:48:48 by rbouizer          #+#    #+#             */
-/*   Updated: 2024/06/22 16:56:41 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/27 22:12:49 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "libft.h"
+
 
 void	ft_lstadd_back(t_stack **alst, t_stack *new)
 {
 	t_stack	*li;
-
 	if (!new)
 		return ;
 	if (!(*alst))

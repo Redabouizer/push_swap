@@ -6,7 +6,7 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 17:24:29 by rbouizer          #+#    #+#             */
-/*   Updated: 2024/06/23 15:58:14 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/24 01:47:57 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_stack *ft_lstnew(int index, int content)
     t_stack *new_node = (t_stack *)malloc(sizeof(t_stack));
     if (!new_node)
     {
-        ft_printf("Memory allocation error\n");
+        ft_printf("Error\n");
         exit(1);
     }
     new_node->content = content;
@@ -36,14 +36,14 @@ int process_tokens(t_stack **stack_A, char *argv)
         argv++;
     if (!*argv)
     { 
-        ft_printf("ERROR\n");
+        ft_printf("Error\n");
         return 1;
     }
     tokens = ft_split(argv, ' ');
 
     if (!tokens)
     {
-        ft_printf("ERROR\n");
+        ft_printf("Error\n");
         ft_lstclear((t_stack **)stack_A, free);
         return 1;
     }
@@ -83,7 +83,7 @@ int process_token(t_stack **stack_A, char *token)
     }
     else
     {
-        ft_printf("ERROR\n");
+        ft_printf("Error\n");
         return 1;
     }
 }
@@ -96,7 +96,7 @@ int filter_number(const char *token)
     j = 0;
     if (!token || *token == '\0' || *token == ' ')
     {
-        ft_printf("ERROR\n");
+        ft_printf("Error\n");
         return 1;
     }
 
@@ -122,10 +122,10 @@ void ft_stack(t_stack **Stack_A, int content)
 {
     t_stack *node;
 
-    node = ft_lstnew(5, content);
+    node = ft_lstnew(-1, content);
     if (!node)
     {
-        ft_printf("ERREUR\n");
+        ft_printf("Error\n");
         exit(1);
     }
     ft_lstadd_back(Stack_A, node);

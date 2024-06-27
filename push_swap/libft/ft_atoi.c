@@ -6,7 +6,7 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 21:42:59 by rbouizer          #+#    #+#             */
-/*   Updated: 2024/06/22 02:08:35 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/27 22:12:46 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_atoi(const char *str)
 {
 	int		s;
-	size_t	r;
+	long	r;
 	int		i;
 
 	s = 1;
@@ -32,10 +32,8 @@ size_t	ft_atoi(const char *str)
 	while ((*(str + i) >= '0' && *(str + i) <= '9') && *(str + i))
 	{
 		r = r * 10 + str[i] - '0';
-		if (r > 9223372036854775807ULL && s == 1)
-			return (-1);
-		if (r > 9223372036854775808ULL && s == -1)
-			return (0);
+		if ((r > 2147483647 && s == 1 ) || (r < -2147483648 && s == -1))
+			return (2147483648);
 		i++;
 	}
 	return ((s * r));

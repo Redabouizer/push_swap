@@ -6,7 +6,7 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 09:22:27 by rbouizer          #+#    #+#             */
-/*   Updated: 2024/06/21 15:54:23 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/27 22:13:11 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	**ft_split(char const *s, char c)
 	size_t	count;
 	char	**str;
 
-	if (!s)
+	if (!s || !*s)
 		return (NULL);
 	count = count_words(s, c);
 	str = malloc(sizeof(char *) * (count + 1));

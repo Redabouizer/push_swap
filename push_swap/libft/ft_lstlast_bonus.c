@@ -6,11 +6,12 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 19:53:22 by rbouizer          #+#    #+#             */
-/*   Updated: 2024/06/22 16:56:54 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/27 22:12:59 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "libft.h"
+
 
 t_stack	*ft_lstlast(t_stack *lst)
 {

@@ -6,7 +6,7 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 17:14:25 by rbouizer          #+#    #+#             */
-/*   Updated: 2024/06/22 22:29:21 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/24 01:47:39 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int rep_number(t_stack *Stack_A)
         {
             if (i->content == j->content)
             {
-                ft_printf("ERREUR\n");
+                ft_printf("Error\n");
                 return 1;
             }
             j = j->next;
