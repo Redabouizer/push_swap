@@ -6,7 +6,7 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 16:46:52 by rbouizer          #+#    #+#             */
-/*   Updated: 2024/06/27 22:18:32 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/28 19:05:27 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void free_tokens(char **tokens);
 int rep_number(t_stack *Stack_A);
 void free_memory(t_stack *list);
 
+int ft_sort_index(t_stack *list_A);
 int ft_sort_node(t_stack **list_A, t_stack **list_B);
 
 #endif

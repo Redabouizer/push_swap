@@ -92,7 +92,7 @@ void ft_sort2(t_stack **list_A, char c)
     ft_swap(list_A, c);
 }
 
-int ft_sort3(t_stack **h, char ch)
+void ft_sort3(t_stack **h, char ch)
 {
 
     int n[3];
@@ -100,21 +100,21 @@ int ft_sort3(t_stack **h, char ch)
     (1) && (n[0] = (*h)->index, n[1] = (*h)->next->index);
     n[2] = (*h)->next->next->index;
     if (n[1] < n[0] && n[1] < n[2] && n[0] < n[2])
-        ft_swap(h, 'a');
+        ft_swap(h, ch);
     else if (n[2] < n[1] && n[2] < n[0] && n[0] > n[1])
     {
-        ft_swap(h, 'a');
-        ft_reverse_rotate(h, 'a');
+        ft_swap(h, ch);
+        ft_reverse_rotate(h, ch);
     }
     else if (n[1] < n[0] && n[1] < n[2] && n[0] > n[2])
-        ft_rotate(h, 'a');
+        ft_rotate(h,ch);
     else if (n[0] < n[1] && n[0] < n[2] && n[1] > n[2])
     {
-        ft_swap(h, 'a');
-        ft_rotate(h, 'a');
+        ft_swap(h, ch);
+        ft_rotate(h, ch);
     }
     else if (n[2] < n[0] && n[2] < n[1] && n[0] < n[1])
-        ft_reverse_rotate(h, 'a');
+        ft_reverse_rotate(h, ch);
 }
 
 void ft_sort5(t_stack **list_A, t_stack **list_B)
@@ -254,87 +254,6 @@ int ft_sort_node(t_stack **list_A, t_stack **list_B)
         ft_sort3(list_A, 'a');
         sort_stack_pro(list_A, list_B);
     }
-
-    return 0;
-}
-
-// mchi mohim
-void show(t_stack *list, const char *name)
-{
-    ft_printf("%s: ", name);
-    while (list)
-    {
-        ft_printf("(%d  %d)", list->index, list->content);
-        list = list->next;
-    }
-    ft_printf("\n");
-}
-
-int randomInteger(int min, int max)
-{
-    if (min > max)
-    {
-        int temp = min;
-        min = max;
-        max = temp;
-    }
-    return rand() % (max - min + 1) + min;
-}
-
-int is_duplicate(t_stack *stack, int value)
-{
-    while (stack != NULL)
-    {
-        if (stack->content == value)
-            return 1;
-        stack = stack->next;
-    }
-    return 0;
-}
-
-int main(void)
-{
-    t_stack *list_A = NULL;
-    t_stack *list_B = NULL;
-    int nb;
-    int i = 5;
-
-    srand(time(NULL));
-
-    int min = -100;
-    int max = 500;
-    while (i != 0)
-    {
-        int randomNum;
-        do
-        {
-            randomNum = randomInteger(min, max);
-        } while (is_duplicate(list_A, randomNum));
-        ft_lstadd_back(&list_A, ft_lstnew(-1, randomNum));
-        i--;
-    }
-
-    ft_printf("-------------------\n");
-
-    if (ft_check_sort(list_A) == 0)
-    {
-        ft_printf("no sort\n");
-    }
-    else
-    {
-        ft_printf("sort\n");
-        show(list_A, "Initial List A");
-        return 0;
-    }
-
-    nb = ft_lstsize(list_A);
-    ft_sort_index(list_A);
-    show(list_A, "Initial List A");
-    show(list_B, "Initial List B");
-    ft_sort_node(&list_A, &list_B);
-
-    show(list_A, "Initial List A");
-    show(list_B, "Initial List B");
 
     return 0;
 }

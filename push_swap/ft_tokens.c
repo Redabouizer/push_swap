@@ -6,26 +6,11 @@
 /*   By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 17:24:29 by rbouizer          #+#    #+#             */
-/*   Updated: 2024/06/24 01:47:57 by rbouizer         ###   ########.fr       */
+/*   Updated: 2024/06/28 19:21:57 by rbouizer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_stack *ft_lstnew(int index, int content)
-{
-    t_stack *new_node = (t_stack *)malloc(sizeof(t_stack));
-    if (!new_node)
-    {
-        ft_printf("Error\n");
-        exit(1);
-    }
-    new_node->content = content;
-    new_node->index = index;
-    new_node->next = NULL;
-
-    return new_node;
-}
 
 int process_tokens(t_stack **stack_A, char *argv)
 {
@@ -118,7 +103,7 @@ int filter_number(const char *token)
     return 0;
 }
 
-void ft_stack(t_stack **Stack_A, int content)
+void ft_stack(t_stack **stack_A, int content)
 {
     t_stack *node;
 
@@ -126,7 +111,8 @@ void ft_stack(t_stack **Stack_A, int content)
     if (!node)
     {
         ft_printf("Error\n");
+        free_memory(*stack_A);
         exit(1);
     }
-    ft_lstadd_back(Stack_A, node);
+    ft_lstadd_back(stack_A, node);
 }

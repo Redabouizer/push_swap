@@ -6,7 +6,7 @@
 #    By: rbouizer <rbouizer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/06 17:37:50 by rbouizer          #+#    #+#              #
-#    Updated: 2024/06/27 22:39:19 by rbouizer         ###   ########.fr        #
+#    Updated: 2024/06/28 18:57:03 by rbouizer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ $(LIB) : $(OBJS)
 	$(AR) $(LIB) $(OBJS)
 
 $(NAME) : $(LIB)
-	$(CC) $(CFLAGS) -o $(NAME) ft_sort.c $(LIB)
+	$(CC) $(CFLAGS) -o $(NAME) push_swap.c $(LIB)
 
 %.o : %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
